@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+
+  #service: enableSelfPreservation=false
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    register-with-eureka: false
+    fetch-registry: false #阻止eureka自身项目注册到注册中心
+
+spring:
+  application:
+    name: tb-euerka
